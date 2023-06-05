@@ -1,7 +1,12 @@
 <script setup>
-const props = defineProps({
+const props = defineProps ({
     livro: Object
 })
+const emit = defineEmits(['adicionarAoCarrinho'])
+function adicionarAoCarrinho(livro){
+    emit ('adicionarAoCarrinho', livro)
+}
+
 function formatarPreco(preco) {
   return 'R$ ' + preco.toFixed(2).replace('.', ',')
 }</script>
